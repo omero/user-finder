@@ -1,0 +1,71 @@
+<div ng-controller="PageAddCtrl" class="container">
+    <div class="row">
+      <h1>My Awsome Add Page Form</h1>
+      <!-- Button trigger modal -->
+      <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
+        Add Page
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <form name="pageAddForm" novalidate class="form-horizontal">
+                <fieldset>
+
+                  <!-- Form Name -->
+                  <legend>Add Page</legend>
+
+                  <!-- Text input-->
+                  <div class="form-group " ng-class="{ 'has-error' : pageAddForm.title.$invalid }">
+                    <label class="col-md-4 control-label" for="page-title">Page Title</label>
+                    <div class="col-md-6">
+                      <input id="page-title" name="title" placeholder="Title" class="form-control input-md" type="text" ng-model="page.title" required>
+                      <span class="help-block">Add the page title</span>
+                    </div>
+                  </div>
+
+                  <!-- Textarea -->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="page-content">Content</label>
+                    <div class="col-md-4">
+                      <textarea class="form-control" id="page-content" name="page-content" ng-model="page.body">Lorem Impsum</textarea>
+                    </div>
+                  </div>
+
+                  <!-- Multiple Checkboxes -->
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="publish">Publish</label>
+                    <div class="col-md-4">
+                      <div class="checkbox">
+                        <label for="publish-0">
+                          <input name="publish" id="publish-0" value="1" type="checkbox" ng-model="page.publish">
+                          Yes
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                </fieldset>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" ng-disabled="pageAddForm.$invalid" ng-click="submitForm()">Save changes</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <h2>Preview</h2>
+      <h1>{{page.title}}</h1>
+      <p class="lead">{{page.body}}</p>
+    </div>
+</div>
+

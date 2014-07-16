@@ -26,6 +26,10 @@ angular
         templateUrl: 'views/user.html',
         controller: 'UserDetailCtrl'
       })
+      .when('/page/add', {
+        templateUrl: 'views/page-add.html',
+        controller: 'PageAddCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'

@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name angularAppApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the angularAppApp
- */
 angular.module('angularAppApp')
   .controller('UserFinderCtrl', function ($scope, $http) {
     $http.get('http://d7.demo.pocketlab.mx/demo/user').
@@ -14,7 +7,6 @@ angular.module('angularAppApp')
       $scope.users = data;
     });
   })
-
 
   .filter('orderObjectBy', function(){
     return function(input, attribute) {
@@ -24,9 +16,9 @@ angular.module('angularAppApp')
         array.push(input[objectKey]);
       }
       array.sort(function(a, b){
-        a = parseInt(a[attribute]);
-        b = parseInt(b[attribute]);
-        return a - b;
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
       });
       return array;
     }
