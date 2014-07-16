@@ -3,21 +3,21 @@
 
   <div class="jumbotron">
     <div class="crop">
-      <img src="{{user.picture.url}}" class="img-circle"/>
-      <h3>{{user.field_name.und[0].value}} {{user.field_last_name.und[0].value}}</h3>
-      <p>{{user.field_description.und[0].value}}</p>
+      <img src="{{user.user_picture}}" class="img-circle"/>
+      <h3>{{user.field_name}} {{user.field_last_name}}</h3>
+      <p>{{user.field_description}}</p>
       <h4>{{user.mail}}</h4>
     </div>
   </div>
 
   <div class="row">
     <div class="col-xs-6">
-      <a href="{{user.field_twitter.und[0].value}}" class="btn btn-block btn-social btn-lg btn-twitter">
+      <a href="{{user.field_twitter}}" class="btn btn-block btn-social btn-lg btn-twitter">
         <i class="fa fa-twitter"></i> Twitter
       </a>
     </div>
     <div class="col-xs-6">
-      <a href="{{user.field_facebook.und[0].value}}" class="btn btn-block btn-social btn-lg btn-facebook">
+      <a href="{{user.field_facebook}}" class="btn btn-block btn-social btn-lg btn-facebook">
         <i class="fa fa-facebook"></i> Facebook
       </a>
     </div>
