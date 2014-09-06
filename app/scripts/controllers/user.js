@@ -2,7 +2,7 @@
 
 angular.module('angularAppApp')
   .controller('UserFinderCtrl', function ($scope, $http) {
-    $http.get('http://d7.demo.pocketlab.mx/demo/user').
+    $http.get('http://headlessd7-pocketlab.rhcloud.com/api/user-finder').
     success(function(data){
       $scope.users = data;
     });
@@ -25,7 +25,7 @@ angular.module('angularAppApp')
   })
 
   .controller('UserDetailCtrl', function ($scope, $http, $routeParams) {
-    var uriUser = 'http://d7.demo.pocketlab.mx/demo/user/'+$routeParams.uid;
+    var uriUser = 'http://headlessd7-pocketlab.rhcloud.com/api/user/'+$routeParams.uid;
     $http.get(uriUser).
     success(function(data){
       $scope.user = data;
